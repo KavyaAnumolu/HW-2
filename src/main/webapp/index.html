@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>    
+<html>    
+<head>    
+  <title>Student Survey Form</title>
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<style>    
+ {    
+  box-sizing: border-box;    
+}   
+.jumbotron {
+  background-image: url("mason.jpg");
+  background-size: auto 100%;
+  min-height: 83px;
+  background-repeat: no-repeat;
+  margin-bottom: 0px !important;
+}
+
+ .Tname{
+    background-color: #eff0e7;
+    padding: 2rem 0;
+    margin-bottom: 40px;
+  }
+  /*Your web page should make use of the George Mason University color scheme in some way. Green: #006633 Yellow: #FFCC33*/
+  .name{
+    
+    margin-top: 0;
+    font-size: 2vm;
+    color:#006633;
+    font-weight: 700;
+    text-shadow: none;
+    padding: 1px 4.25rem;
+    padding-bottom: 0rem;
+    font-weight: bold;
+   
+   
+  }
+
+  .fixed_logo{
+position: fixed;
+bottom:0;
+right:0;
+width:250px;
+}
+.logo {
+    height: auto;
+    
+    left:0;
+    width: 150px;
+    float: left;
+    margin-top: 20px;
+}
+    
+input[type=text], select, textarea {    
+  width: 100%;    
+  padding: 12px;    
+  border: 1px solid rgb(70, 68, 68);    
+  border-radius: 4px;    
+  resize: vertical;    
+}    
+input[type=email], select, textarea {    
+  width: 100%;    
+  padding: 12px;    
+  border: 1px solid rgb(70, 68, 68);    
+  border-radius: 4px;    
+  resize: vertical;    
+}    
+    
+label {    
+  padding: 12px 12px 12px 0;    
+  display: inline-block;    
+}    
+    
+input[type=submit] {    
+  background-color: rgb(37, 116, 161);    
+  color: white;    
+  padding: 12px 20px;    
+  border: none;    
+  border-radius: 4px;    
+  cursor: pointer;    
+  float: left;    
+}   
+input[type=reset] {    
+  background-color: rgb(37, 116, 161);    
+  color: white;    
+  padding: 12px 20px;    
+  border: none;    
+  border-radius: 4px;    
+  cursor: pointer;    
+  float: left; 
+  margin-left: 20px;   
+}  
+    
+input[type=submit]:hover {    
+  background-color: #45a049;    
+}    
+    
+.container {    
+  border-radius: 5px;    
+  background-color: #f2f2f2;    
+  padding: 20px;    
+}    
+    
+.col-25 {    
+  float: left;    
+  width: 25%;    
+  margin-top: 6px;    
+}    
+    
+.col-75 {    
+  float: left;    
+  width: 75%;    
+  margin-top: 6px;    
+}    
+    
+/* Clear floats after the columns */    
+.row:after {    
+  content: "";    
+  display: table;    
+  clear: both;    
+}    
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
+    padding: 0em !important;
+    text-indent: -9999999px !important;
+  }
+  
+.ui-widget-header {
+    border: 1px solid #aaaaaa ! important;   
+    background: #006633 ! important;
+    color: #ffcc33 ! important;
+    font-weight: bold;
+  }
+    
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */    
+</style>  
+
+</head>    
+<body>    
+  <!-- Your pages should include the George Mason University Logo as an image link to the GMU Website fixed on the right-bottom portion of your Web page. -->
+  <div class="fixed_logo">
+             <a href="https://volgenau.gmu.edu/">  <img src="GMU_logo.png" alt='George Mason University Logo' class='logo'></a>
+  </div>
+   <div class="header">
+      <div class="jumbotron text-center" style=" background-color:black;">
+         <!--  <img src="C:\Users\bhava\Desktop\mason.JPG" alt="Mason Logo"> -->
+    </div>
+</div>
+
+   <div  class="Tname" id="home">
+    <!-- Your web page should make use of the George Mason University color scheme in some way. Green: #006633 Yellow: #FFCC33 -->
+    <!--  The heading at the top of the page should be inside a rectangular box with a solid border in GMU green (#006633) and 5px width. The box should use a box-shadow of your styling choice. -->
+         <h2 class="name"><b style=" border: 5px solid;box-shadow: 5px 10px #ffcc33;">STUDENT SURVEY FORM</b>
+         
+     
+
+  </h2>
+   
+   </div>  
+<!-- This web page should contain a form with text boxes using appropriate input types for the user name, street address, city, state, zip, telephone number, e-mail, URL, and date of survey. -->
+           
+<div class="container">  
+<!-- Enable the autocomplete attribute for the entire survey form that will allow the user to automatically fill in his/her information (e.g., name, address, email, telephone, etc.) based on previous input. -->
+  <form method="post" autocomplete="on">  
+        <div id="UsernameDialog" title="Error" style="display:none">
+               <p>Please enter a valid Username!</p>
+       </div>
+       <div id="streetDialog" title="Error" style="display:none">
+             <p>Please enter a valid Street address!</p>
+       </div>
+       <div id="checkboxDialog" title="Error" style="display:none">
+             <p>Please select atleast two checkboxes!</p>
+       </div>
+       <div id="radiobDialog" title="Error" style="display:none">
+            <p>Please select atleast one radio button!</p>
+       </div>
+       <div id="emailDialog" title="Error" style="display:none">
+           <p> Please enter a valid E-mail address!</p>
+       </div>
+  
+    <div class="row">    
+      <div class="col-25">    
+        <label for="uname">First Name*</label>    
+      </div>  
+        <div class="col-75"> 
+      <input type="text" autofocus id="uname" name="username" placeholder="Your First Name.." required> 
+      </div>   
+    </div>
+    <div class="row">
+      <div class="col-25">    
+        <label for="lname">Last Name*</label>    
+      </div> 
+       <div class="col-75"> 
+       <input type="text" autofocus id="lname" name="username" placeholder="Your Last Name.." required>  
+      </div>
+      </div>  
+     <!--  Use placeholders where you deem appropriate (e.g., for the date format, email, URL, etc.) that provides an example of the text and/or format/pattern the user should enter. -->
+      
+    <div class="row">    
+      <div class="col-25">    
+        <label for="staddr">Street Address*</label>    
+      </div>    
+      <div class="col-75">    
+        <input type="text" id="address" name="streetaddress" placeholder="Your Street Address.." required>    
+      </div>    
+    </div> 
+
+    <div class="row">    
+      <div class="col-25">    
+        <label for="city">City*</label>         
+      </div>  
+       <div class="col-75">    
+        <input type="text" id="city" name="City" placeholder="Your City Name.." required>    
+      </div>   
+       
+    </div>   
+
+    <div class="row">    
+      <div class="col-25">    
+        <label for="state">State*</label>    
+      </div>    
+      <div class="col-75">    
+        <input type="text" id="state" name="State" placeholder="Your State Name.." required>   
+      </div>    
+    </div>   
+
+     <div class="row">    
+      <div class="col-25">    
+        <label for="zcode">Zipcode*</label>    
+      </div>    
+      <div class="col-75">    
+          <input id="zipcode"type="number"placeholder="Your Zipcode.." pattern="^\d{5}(?:[-\s]\d{4})?$"  required/>
+                <label id="zipcodeerror" ></label>          
+      </div>    
+    </div>   
+
+    <div class="row">    
+      <div class="col-25">    
+        <label for="phone">Telephone Number*</label>    
+      </div>    
+      <div class="col-75">    
+         <input id="telephone" type="tel" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$" placeholder="(xxx) xxx-xxxx" required >
+                         
+      </div>    
+    </div> 
+
+
+    <div class="row">    
+        <div class="col-25">    
+          <label for="email">E-Mail Id*</label>    
+        </div>    
+        <div class="col-75">    
+          <input type="email" id="email" name="mailid" placeholder="yourEmail@gmail.com" required>    
+        </div>    
+      </div>   
+
+       
+
+        <div class="row">    
+        <div class="col-25">    
+          <label for="dos">Date of Survey*</label>  
+          <!-- Visually indicate to the user which fields are required   -->
+        </div>    
+        <div class="col-75">    
+          <input type="date" (yyyy-mm-dd) id="dos" name="dos" placeholder="Enter Date of Survey.." required>    
+        </div>    
+      </div>  
+
+      <!--  Provide checkboxes that allow prospective students to indicate what they liked most about the campus. The checkboxes should include: students, location, campus, atmosphere, dorm rooms, and sports. -->
+       <div class="row">    
+        <div class="col-25">    
+          <label for="mabtcmp">Most Liked about Campus</label>    
+        </div>    
+        <div class="col-75"> 
+        <label> 
+           <input type="checkbox" id="ml" name="mostliked" value="Students"> 
+          Students
+           
+        </label>
+        <label>
+           <input type="checkbox" id="ml" name="mostliked" value="Location"> 
+           Location
+         </label>
+         <label>
+           <input type="checkbox" id="ml" name="mostliked" value="Campus"> 
+           Campus
+         </label>
+          <label>
+           <input type="checkbox" id="ml" name="mostliked" value="Atmosphere"> 
+           Atmosphere
+         </label>
+          <label>
+           <input type="checkbox" id="ml" name="mostliked" value="Dorm Rooms"> 
+           Dorm Rooms
+         </label>
+         <label>
+           <input type="checkbox" id="ml" name="mostliked" value="Sports"> 
+           Sports
+         </label>
+
+
+        </div>    
+      </div>  
+
+<!-- Provide radio buttons that ask the prospective students how they became interested in the university. Options should include: friends, television, Internet, and other. -->
+        <div class="row">    
+        <div class="col-25">    
+          <label for="gettoknow">How did you get to know about our University?*</label>    
+        </div>    
+        <div class="col-75"> 
+        <label>   
+          <input type="radio" id="gettoknow" name="gettoknow" value="Friends" required>   
+          Friends
+        </label> 
+        <label>   
+          <input type="radio" id="gettoknow" name="gettoknow" value="Television">   
+          Television
+        </label>
+        <label>   
+          <input type="radio" id="gettoknow" name="gettoknow" value="Internet">   
+          Internet
+        </label>
+        <label>   
+          <input type="radio" id="gettoknow" name="gettoknow" value="Other">   
+          Other
+        </label>
+        </div>    
+      </div>   
+
+
+
+
+
+    <div class="row">    
+      <div class="col-25">    
+        <label for="country">Likelihood of Recommending this school to others*</label>    
+      </div>    
+      <div class="col-75"> 
+     <!--  Provide dropdown list of options for the user to select the likelihood of him/her recommending this school to other prospective students. The three options of the dropdown list are:   --> 
+        <select id="country" name="country" required>    
+            <option value="none">Select Reccomendation to others</option>    
+          <option value="very likely">Very Likely</option>    
+          <option value="likely">Likely</option>    
+          <option value="unlikely">Unlikely</option>    
+             
+        </select>    
+      </div>    
+    </div>   
+
+<!-- Provide a text area for additional comments, and a submit button. -->
+    <div class="row">    
+      <div class="col-25">    
+        <label for="feed_back">Additional Comments</label>    
+      </div>    
+      <div class="col-75">    
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>    
+      </div>    
+    </div>    
+
+
+
+    <div class="row">    
+      <div class="col-25">    
+        <label for="data">Raffle</label>    
+      </div>    
+      <div class="col-75"> 
+      <!-- A user is required to enter ten comma separated numbers ranging from 1 through100 in the Data field.   --> 
+        <input id="data" type="text" onblur="calculate(this.value);" placeholder="Enter 10 comma separated numbers"/>
+                            
+            <label id="errormessage" ></label>
+      </div>    
+    </div>
+
+  
+
+
+
+
+    <br>
+
+    <div class="row">    
+      <input type="submit" value="Submit" id ="buttonid" onclick="submitForm();">  
+      <input type="reset" value="Cancel" onclick="resetForm();"> 
+    </div>    
+  </form>   
+  <br>
+  <span>Kavya Anumolu</span>
+ 
+</div>    
+    
+    <!--  <div class="footer-copyright text-center py-3" style="color: white;">
+     <a href="https://volgenau.gmu.edu/"><img src="C:\Users\bhava\Desktop\fm.PNG" alt="Mason Logo" style="width: 100%;"></a>
+ </div> -->
+
+ 
+
+
+</body>   
+
+
+<script src="script.js"></script>
+
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+   
+
+</html>    
